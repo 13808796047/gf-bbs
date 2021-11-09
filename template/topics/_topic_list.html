@@ -1,0 +1,47 @@
+{{if .topics}}
+  <ul class="list-unstyled">
+    {{range .topics}}
+      <li class="media">
+        <div class="media-left">
+          <a href="">
+            <img class="media-object img-thumbnail mr-3" style="width: 52px; height: 52px;" src="" title="">
+          </a>
+        </div>
+
+        <div class="media-body">
+
+          <div class="media-heading mt-0 mb-1">
+            <a href="" title="{{.Title }}">
+                {{.Title }}
+            </a>
+            <a class="float-right" href="">
+              <span class="badge badge-secondary badge-pill"> {{ .ReplyCount }} </span>
+            </a>
+          </div>
+
+          <small class="media-body meta text-secondary">
+
+            <a class="text-secondary" href="#" title="{{ .Categories.Name }}">
+              <i class="far fa-folder"></i>
+              {{ .Categories.Name }}
+            </a>
+
+            <span> • </span>
+            <a class="text-secondary" href="" title="">
+              <i class="far fa-user"></i>
+        
+            </a>
+            <span> • </span>
+            <i class="far fa-clock"></i>
+            <span class="timeago" title="最后活跃于："></span>
+          </small>
+
+        </div>
+      </li>
+
+  {{end}}
+  </ul>
+
+  {{else}}
+  <div class="empty-block">暂无数据 ~_~ </div>
+{{end}}
